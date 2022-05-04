@@ -30,7 +30,7 @@ body{
 header{
     background-color: var(--primary-blue-400);
     text-align: center;
-    padding:5rem 0 ;
+    padding:2rem 0 ;
 }
 
 h1{
@@ -125,8 +125,8 @@ header p{
  }
  
  .board{
-     width: 520px;
-     height: 520px;
+     width: 320px;
+     height: 320px;
      display: none;
      grid-template-columns: 1fr 1fr 1fr;
      row-gap: 1rem;
@@ -135,8 +135,8 @@ header p{
  }
 
  .box{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
      background-color: var(--primary-grey-200);
  }
 
@@ -222,6 +222,24 @@ header p{
  .clicked-box p{
     width: 80%;
     color: white;
-    font-size: 5rem;
+    font-size: 3rem;
     margin:2rem auto;
+ }
+h4{
+    font-family: var(--font-montserrat);
+    font-size: 1.5rem;
+    color: var(--primary-grey-200);
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 1rem;  
+}
+ .end-game{
+    margin: 0 auto;
+    margin-top: 240px;
+    width: 300px;
+    background-color: var(--primary-blue-500);
+    padding: 2rem;
+    border-radius: 4px;
+    text-align: center;
  }
