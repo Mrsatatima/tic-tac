@@ -39,6 +39,7 @@ h1{
     margin-bottom: 1.5rem;
     font-family: var(--font-montserrat);
     font-weight: bold;
+    width: 100%;
 }
 
 header p{
@@ -243,3 +244,60 @@ h4{
     border-radius: 4px;
     text-align: center;
  }
+
+ @media only screen and (max-width: 600px) {
+  
+    header{
+        padding: .5rem;
+    }
+    h1{
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+    
+    header p{
+        font-size: 1rem;
+    }
+    
+    #player-names{
+        margin: 1rem auto;
+    }
+    #player-names ol{
+        width: 300px;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    #player-names li{
+        padding: .5rem .5rem;
+        width: 120px;
+    }
+     h2{
+         margin-bottom: .5rem;
+     }
+    
+     .name{
+        font-family: var(--font-roboto);
+        font-size: 1rem;
+        margin-bottom: .5rem;
+     }
+    
+     .symbol{
+        font-size: 2rem;
+        margin-bottom: 0;
+
+     }
+    
+     #player-names li button{
+        padding: .1rem 1rem;
+        font-size: 1rem;
+        box-shadow: 1px 1px 2px rgba(108, 108, 254, .1);
+     }
+     #game-board ul{
+         margin-top: .8rem;
+         margin-bottom: .8rem;
+     }
+    
+  }
+  
