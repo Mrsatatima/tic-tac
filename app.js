@@ -160,7 +160,7 @@ function playerBoardInput(event) {
   if (gameDraw){
     const winDropDown = document.querySelector(".win");
     const winText = document.querySelector(".end-game h4");
-    winText.textContent = congratstext;
+    winText.textContent = "Its a Draw...";
     winDropDown.classList.add("display-win");
   }
 }
