@@ -12,21 +12,36 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/style.css" />
+    <script src="app.js" defer></script>
   </head>
   <header>
     <h1>Play Tic, Tac, Toe</h1>
     <p>Built with HTML, CSS, JavaScript</p>
   </header>
   <main>
-    <section id="player-name">
+    <aside class="name-input">
+        <div class="form" >
+            <h3>Choose Your Name</h3>
+            <label for="player-name">Player name</label>
+            <input type="text" name="player-name" id="player-name" >
+            <p id="error-message"></p>
+            <button id="cancel">Cancel</button>
+            <button id="submit">Submit</button>
+        </div>
+    </aside>
+    <aside class="win">
+    <h4></h4>
+    <button id="submit">Restart</button>
+  </aside>
+    <section id="player-names">
       <ol>
-        <li>
+        <li id="player-1">
           <h2>player 1</h2>
           <p class="name">player name</p>
           <p class="symbol">X</p>
           <button>Edit</button>
         </li>
-        <li>
+        <li id="player-2">
           <h2>player 1</h2>
           <p class="name">player name</p>
           <p class="symbol">O</p>
@@ -36,16 +51,16 @@
     </section>
     <section id="game-board">
       <button>Start New Game</button>
-      <ul id="board">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+      <ul class="board">
+          <li class="box"></li>
+          <li class="box"></li>
+          <li class="box"></li>
+          <li class="box"></li>
+          <li class="box"></li>
+          <li class="box"></li>
+          <li class="box"></li>
+          <li class="box"></li>
+          <li class="box"></li>
       </ul>
     </section>
   </main>
