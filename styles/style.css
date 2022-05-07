@@ -49,16 +49,17 @@ header p{
     font-weight: 400;
 }
 
-#player-names{
+.player-names{
     margin: 2rem auto;
+    display: none;
 }
-#player-names ol{
+.player-names ol{
     width: 520px;
     margin: 2rem auto;
     display: flex;
     justify-content: space-between;
 }
-#player-names li{
+.player-names li{
     padding: 1rem .5rem;
     width: 220px;
     background-color: var(--primary-grey-200);
@@ -95,7 +96,7 @@ header p{
     margin-bottom: 1rem;
  }
 
- #player-names li button{
+ .player-names li button{
      border: none;
      background-color: unset;
      text-align: center;
@@ -124,7 +125,16 @@ header p{
     color: var(--primary-blue-400);
     transform: rotateY(25deg);
  }
+
+ #start-game, #reset-game{
+     width: 200px;
+     margin: 1rem auto 0 auto;
+     text-align: center;
+ }
  
+ .reset {
+     display: none;
+ }
  .board{
      width: 320px;
      height: 320px;
@@ -145,7 +155,7 @@ header p{
     background-color: var(--primary-blue-400);
  }
 
- .name-input, .win{
+ .name-input, .win, .mode{
      display: none;
      position: absolute;
      top: 0;
@@ -204,11 +214,15 @@ header p{
     outline: none;
  }
 
- .display-popup, .display-win{
+ .display-popup, .display-win, .display-mode, .display-player-names, .display-reset{
      display: block;
  }
  .display-gameboard{
      display: grid;
+ }
+
+ .hide-edit{
+     display: none;
  }
  #error-message{
      font-size: 1rem;
@@ -238,7 +252,7 @@ h4{
  .end-game{
     margin: 0 auto;
     margin-top: 240px;
-    width: 300px;
+    width: 350px;
     background-color: var(--primary-blue-500);
     padding: 2rem;
     border-radius: 4px;
@@ -260,16 +274,16 @@ h4{
         font-size: 1rem;
     }
     
-    #player-names{
+    .player-names{
         margin: 1rem auto;
     }
-    #player-names ol{
+    .player-names ol{
         width: 300px;
         margin: 1rem auto;
         display: flex;
         justify-content: space-between;
     }
-    #player-names li{
+    .player-names li{
         padding: .5rem .5rem;
         width: 120px;
     }
@@ -289,7 +303,7 @@ h4{
 
      }
     
-     #player-names li button{
+     .player-names li button{
         padding: .1rem 1rem;
         font-size: 1rem;
         box-shadow: 1px 1px 2px rgba(108, 108, 254, .1);

@@ -18,24 +18,33 @@
     <h1>Play Tic, Tac, Toe</h1>
     <p>Built with HTML, CSS, JavaScript</p>
   </header>
-  <main>
-    <aside class="name-input">
-        <div class="form" >
-            <h3>Choose Your Name</h3>
-            <label for="player-name">Player name</label>
-            <input type="text" name="player-name" id="player-name" >
-            <p id="error-message"></p>
-            <button id="cancel">Cancel</button>
-            <button id="submit">Submit</button>
-        </div>
-    </aside>
-    <aside class="win">
+  <aside class="mode">
     <div class="end-game">
-      <h4></h4>
-      <button id="submit">Restart</button>
+      <button id="player">Vs Player</button>
+      <button id="computer">Vs Computer</button>
     </div>
   </aside>
-    <section id="player-names">
+  <aside class="name-input">
+    <div class="form">
+      <h3>Choose Your Name</h3>
+      <label for="player-name">Player name</label>
+      <input type="text" name="player-name" id="player-name" />
+      <p id="error-message"></p>
+      <button id="cancel">Cancel</button>
+      <button id="submit">Submit</button>
+    </div>
+  </aside>
+  <aside class="win">
+    <div class="end-game">
+      <h4></h4>
+      <button id="restart">Restart</button>
+    </div>
+  </aside>
+  <main>
+    <div id="start-game">
+      <button id="start">Start New Game</button>
+    </div>
+    <section class="player-names">
       <ol>
         <li id="player-1">
           <h2>player 1</h2>
@@ -44,7 +53,7 @@
           <button>Edit</button>
         </li>
         <li id="player-2">
-          <h2>player 1</h2>
+          <h2>player 2</h2>
           <p class="name">player name</p>
           <p class="symbol">O</p>
           <button>Edit</button>
@@ -52,17 +61,19 @@
       </ol>
     </section>
     <section id="game-board">
-      <button>Start New Game</button>
+      <div id="reset-game">
+      <button class="reset">Open Board</button>
+      </div>
       <ul class="board">
-          <li class="box"></li>
-          <li class="box"></li>
-          <li class="box"></li>
-          <li class="box"></li>
-          <li class="box"></li>
-          <li class="box"></li>
-          <li class="box"></li>
-          <li class="box"></li>
-          <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
+        <li class="box"></li>
       </ul>
     </section>
   </main>
