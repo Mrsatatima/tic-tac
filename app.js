@@ -41,42 +41,60 @@ function randomBox(selected) {
 }
 function smartComputer() {
   for (const win of winStructure) {
-    console.log(boardBox.children[win[1]].children[0])
+    console.log(boardBox.children[win[1]].children[0]);
     if (
-      (boardBox.children[win[0]].textContent && boardBox.children[win[0]].children[0].textContent == "O") &&
-       (boardBox.children[win[1]].textContent && boardBox.children[win[1]].children[0].textContent == "O") && !boardBox.children[win[2]].textContent
-     ) {
-       return win[2];
-     } else if (
-       (boardBox.children[win[2]].textContent && boardBox.children[win[2]].children[0].textContent == "O") &&
-       (boardBox.children[win[1]].textContent && boardBox.children[win[1]].children[0].textContent == "O") && !boardBox.children[win[0]].textContent
-     ) {
-       return win[0];
-     } else if (
-       (boardBox.children[win[0]].textContent && boardBox.children[win[0]].children[0].textContent == "O") &&
-       (boardBox.children[win[2]].textContent && boardBox.children[win[2]].children[0].textContent == "O") && !boardBox.children[win[1]].textContent
-     ) {
-       return win[1];
-     }
-   else {
-      if (
-     (boardBox.children[win[0]].textContent && boardBox.children[win[0]].children[0].textContent == "X") &&
-      (boardBox.children[win[1]].textContent && boardBox.children[win[1]].children[0].textContent == "X") && !boardBox.children[win[2]].textContent
+      boardBox.children[win[0]].textContent &&
+      boardBox.children[win[0]].children[0].textContent == "O" &&
+      boardBox.children[win[1]].textContent &&
+      boardBox.children[win[1]].children[0].textContent == "O" &&
+      !boardBox.children[win[2]].textContent
     ) {
       return win[2];
     } else if (
-      (boardBox.children[win[2]].textContent && boardBox.children[win[2]].children[0].textContent == "X") &&
-      (boardBox.children[win[1]].textContent && boardBox.children[win[1]].children[0].textContent == "X") && !boardBox.children[win[0]].textContent
+      boardBox.children[win[2]].textContent &&
+      boardBox.children[win[2]].children[0].textContent == "O" &&
+      boardBox.children[win[1]].textContent &&
+      boardBox.children[win[1]].children[0].textContent == "O" &&
+      !boardBox.children[win[0]].textContent
     ) {
       return win[0];
     } else if (
-      (boardBox.children[win[0]].textContent && boardBox.children[win[0]].children[0].textContent == "X") &&
-      (boardBox.children[win[2]].textContent && boardBox.children[win[2]].children[0].textContent == "X") && !boardBox.children[win[1]].textContent
+      boardBox.children[win[0]].textContent &&
+      boardBox.children[win[0]].children[0].textContent == "O" &&
+      boardBox.children[win[2]].textContent &&
+      boardBox.children[win[2]].children[0].textContent == "O" &&
+      !boardBox.children[win[1]].textContent
     ) {
       return win[1];
-    }}
+    } else {
+      if (
+        boardBox.children[win[0]].textContent &&
+        boardBox.children[win[0]].children[0].textContent == "X" &&
+        boardBox.children[win[1]].textContent &&
+        boardBox.children[win[1]].children[0].textContent == "X" &&
+        !boardBox.children[win[2]].textContent
+      ) {
+        return win[2];
+      } else if (
+        boardBox.children[win[2]].textContent &&
+        boardBox.children[win[2]].children[0].textContent == "X" &&
+        boardBox.children[win[1]].textContent &&
+        boardBox.children[win[1]].children[0].textContent == "X" &&
+        !boardBox.children[win[0]].textContent
+      ) {
+        return win[0];
+      } else if (
+        boardBox.children[win[0]].textContent &&
+        boardBox.children[win[0]].children[0].textContent == "X" &&
+        boardBox.children[win[2]].textContent &&
+        boardBox.children[win[2]].children[0].textContent == "X" &&
+        !boardBox.children[win[1]].textContent
+      ) {
+        return win[1];
+      }
+    }
   }
-  return randomBox(randomSelected)
+  return randomBox(randomSelected);
 }
 
 function checkGameWin() {
@@ -238,7 +256,7 @@ function playerBoardInput(event) {
   if (computerMode && !playerOneTurn && !gameDraw && !gameWin) {
     console.log(computerMode);
     // indx = randomBox(randomSelected);
-    indx = smartComputer()
+    indx = smartComputer();
     boardBox.children[indx].click();
     randomSelected.push(indx);
   }
