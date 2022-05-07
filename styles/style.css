@@ -134,6 +134,7 @@ header p{
  
  .reset {
      display: none;
+     margin: auto;
  }
  .board{
      width: 320px;
