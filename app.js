@@ -43,6 +43,9 @@ function checkGameWin() {
   }
 }
 function checkDraw(){
+    if (gameWin){
+      return false
+    }
     const boardContents = document.querySelectorAll(".board li")
     for (const box of boardContents) {
         if (!box.textContent){
@@ -143,7 +146,6 @@ function playerBoardInput(event) {
     }
   }
   checkGameWin();
-  gameDraw = checkDraw()
   if (gameWin) {
     const winDropDown = document.querySelector(".win");
     const winText = document.querySelector(".end-game h4");
@@ -157,6 +159,7 @@ function playerBoardInput(event) {
     }
     winDropDown.classList.add("display-win");
   }
+  gameDraw = checkDraw()
   if (gameDraw){
     const winDropDown = document.querySelector(".win");
     const winText = document.querySelector(".end-game h4");
