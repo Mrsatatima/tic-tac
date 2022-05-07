@@ -31,7 +31,9 @@ const winStructure = [
 ];
 
 function randomBox(selected) {
-  let number = Math.floor(Math.random * 6);
+  let number = Math.floor(Math.random() * 9);
+  console.log(number)
+  console.log(boardBox.children[number].textContent)
   if (selected.includes(number) || boardBox.children[number].textContent) {
     return randomBox(selected);
   }
@@ -83,6 +85,7 @@ function vsPlayer(event) {
   playerScoreBoard.classList.add("display-player-names");
   resetGameButton.classList.add("display-reset");
   targetParent.classList.remove("display-mode");
+  computerMode= false
 }
 
 function vsComputer(event) {
@@ -153,6 +156,7 @@ function resetGame(event) {
   playerOneTurn = true;
   gameWin = false;
   gameDraw = false;
+  randomSelected = []
 }
 
 function restartGame(event) {
@@ -168,6 +172,7 @@ function restartGame(event) {
   playerOneTurn = true;
   gameWin = false;
   gameDraw = false;
+  randomSelected = []
 }
 
 function playerBoardInput(event) {
@@ -187,13 +192,15 @@ function playerBoardInput(event) {
       playerOneTurn = true;
     }
   }
-  if (computerMode && !playerOneTurn) {
+  gameDraw = checkDraw();
+  checkGameWin();
+
+  if ((computerMode && !playerOneTurn) &&(!gameDraw && !gameWin)) {
     console.log(computerMode);
     indx = randomBox(randomSelected);
     boardBox.children[indx].click();
-    randomSelected.append(indx)
+    randomSelected.push(indx)
   }
-  checkGameWin();
   if (gameWin) {
     const winDropDown = document.querySelector(".win");
     const winText = document.querySelector(".end-game h4");
