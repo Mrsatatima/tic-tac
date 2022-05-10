@@ -128,6 +128,13 @@ function checkDraw() {
   return true;
 }
 
+function clearboard(board) {
+  const listofBox = board.querySelectorAll("li");
+  for (const box of listofBox) {
+    box.textContent = "";
+    box.classList.remove("clicked-box");
+  }
+}
 function startGame() {
   const chooseModePopup = document.querySelector(".mode");
   console.log(chooseModePopup);
@@ -143,6 +150,8 @@ function vsPlayer(event) {
   playerScoreBoard.classList.add("display-player-names");
   resetGameButton.classList.add("display-reset");
   targetParent.classList.remove("display-mode");
+  const gameBoard = document.querySelector("#game-board");
+  clearboard(gameBoard);
   computerMode = false;
 }
 
@@ -156,12 +165,13 @@ function vsComputer(event) {
   playerTwo.children[1].textContent = "Computer";
   playerTwo.children[3].style.display = "none";
   targetParent.classList.remove("display-mode");
+  const gameBoard = document.querySelector("#game-board");
+  clearboard(gameBoard);
 }
 
 function openInputNamePopup(event) {
   const eventParentID = event.target.parentElement.id;
   const erroMessage = document.getElementById("error-message");
-
   const InputNamePopup = document.querySelector(".name-input");
   InputNamePopup.classList.add(eventParentID, "display-popup");
   erroMessage.textContent = "";
@@ -204,11 +214,7 @@ function addPlayerName(event) {
 function resetGame(event) {
   const targetButton = event.target;
   const gameBoard = targetButton.parentElement.nextElementSibling;
-  const listofBox = gameBoard.querySelectorAll("li");
-  for (const box of listofBox) {
-    box.textContent = "";
-    box.classList.remove("clicked-box");
-  }
+  clearboard(gameBoard)
   gameBoard.classList.add("display-gameboard");
   targetButton.textContent = "Reset Board";
   playerOneTurn = true;
@@ -220,12 +226,8 @@ function resetGame(event) {
 function restartGame(event) {
   const targetButton = event.target;
   const gameBoard = document.querySelector("#game-board");
-  const listofBox = gameBoard.querySelectorAll("li");
   const grandParentElement = targetButton.parentElement.parentElement;
-  for (const box of listofBox) {
-    box.textContent = "";
-    box.classList.remove("clicked-box");
-  }
+  clearboard(gameBoard);
   grandParentElement.classList.remove("display-win");
   playerOneTurn = true;
   gameWin = false;
