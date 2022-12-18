@@ -41,7 +41,7 @@ function randomBox(selected) {
 }
 function smartComputer() {
   for (const win of winStructure) {
-    console.log(boardBox.children[win[1]].children[0]);
+    // console.log(boardBox.children[win[1]].children[0]);
     if (
       boardBox.children[win[0]].textContent &&
       boardBox.children[win[0]].children[0].textContent == "O" &&
@@ -94,7 +94,12 @@ function smartComputer() {
       }
     }
   }
-  return randomBox(randomSelected);
+  if (!boardBox.children[4].textContent) {
+    console.log("heey")
+    return 4;
+  } else {
+    return randomBox(randomSelected);
+  }
 }
 
 function checkGameWin() {
@@ -214,7 +219,7 @@ function addPlayerName(event) {
 function resetGame(event) {
   const targetButton = event.target;
   const gameBoard = targetButton.parentElement.nextElementSibling;
-  clearboard(gameBoard)
+  clearboard(gameBoard);
   gameBoard.classList.add("display-gameboard");
   targetButton.textContent = "Reset Board";
   playerOneTurn = true;
